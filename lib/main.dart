@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_edit_controller/Pages/popupmenubutton.dart';
 import 'package:test_edit_controller/cubit/favourite_items_cubit.dart';
 import 'package:test_edit_controller/global_variables.dart';
 import 'package:test_edit_controller/hero_animation.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: HeroAnimation(products: productList)),
+          home: PopUpButton()),
     );
   }
 }
