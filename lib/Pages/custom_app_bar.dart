@@ -22,9 +22,36 @@ class CustomAppBar extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(children: <Widget>[
-              const TextField(
-                decoration: InputDecoration(
-                  hintText: 'Enter your username',
+              Text(
+                'Type the following words to see if autocomplete works ',
+                style: TextStyle(fontSize: 12),
+              ),
+              Material(
+                child: Autocomplete<String>(
+                  fieldViewBuilder: (BuildContext context,
+                      TextEditingController textEditingController,
+                      FocusNode focusNode,
+                      VoidCallback onFieldSubmitted) {
+                    return TextField(
+                      controller: textEditingController,
+                      focusNode: focusNode,
+                      onSubmitted: (String value) {
+                        onFieldSubmitted();
+                      },
+                    );
+                  },
+                  optionsBuilder: (TextEditingValue textEditingValue) {
+                    if (textEditingValue.text == '') {
+                      return const Iterable<String>.empty();
+                    }
+                    return _kOptions.where((String option) {
+                      return option
+                          .contains(textEditingValue.text.toLowerCase());
+                    });
+                  },
+                  onSelected: (String selection) {
+                    print('You just selected $selection');
+                  },
                 ),
               ),
               Padding(padding: const EdgeInsets.all(8.0)),
@@ -65,6 +92,15 @@ class CustomAppBar extends StatelessWidget {
                           },
                         );
                       },
+                      optionsViewBuilder: (context, onSelected, options) =>
+                          CupertinoListSection(
+                        children: options
+                            .map((String option) => CupertinoListTile(
+                                  onTap: () => onSelected(option),
+                                  title: Text(option),
+                                ))
+                            .toList(),
+                      ),
                       optionsBuilder: (TextEditingValue textEditingValue) {
                         if (textEditingValue.text == '') {
                           return const Iterable<String>.empty();
