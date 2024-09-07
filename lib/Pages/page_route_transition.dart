@@ -24,6 +24,7 @@ class PageRouteWidget extends StatelessWidget {
 
 Route _createRoute() {
   return PageRouteBuilder(
+      transitionDuration: const Duration(seconds: 1),
       pageBuilder: (context, animation, secondaryAnimation) =>
           const SecondPage(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {

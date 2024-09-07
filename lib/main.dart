@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_edit_controller/Pages/custom_app_bar.dart';
+import 'package:test_edit_controller/Pages/draggable.dart';
 import 'package:test_edit_controller/Pages/page_route_transition.dart';
 import 'package:test_edit_controller/Pages/popupmenubutton.dart';
 import 'package:test_edit_controller/cubit/favourite_items_cubit.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: PageRouteWidget()),
+          home: Draggable1()),
     );
   }
 }
