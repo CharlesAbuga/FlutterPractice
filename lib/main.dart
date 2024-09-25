@@ -4,6 +4,7 @@ import 'package:test_edit_controller/Pages/custom_app_bar.dart';
 import 'package:test_edit_controller/Pages/draggable.dart';
 import 'package:test_edit_controller/Pages/page_route_transition.dart';
 import 'package:test_edit_controller/Pages/popupmenubutton.dart';
+import 'package:test_edit_controller/Pages/ui_test_kopokopo.dart';
 import 'package:test_edit_controller/cubit/favourite_items_cubit.dart';
 import 'package:test_edit_controller/global_variables.dart';
 import 'package:test_edit_controller/hero_animation.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: Draggable1()),
+          home: const TransactionHome()),
     );
   }
 }
