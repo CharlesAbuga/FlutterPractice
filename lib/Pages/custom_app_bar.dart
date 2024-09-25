@@ -22,7 +22,7 @@ class CustomAppBar extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(children: <Widget>[
-              Text(
+              const Text(
                 'Type the following words to see if autocomplete works ',
                 style: TextStyle(fontSize: 12),
               ),
@@ -54,7 +54,7 @@ class CustomAppBar extends StatelessWidget {
                   },
                 ),
               ),
-              Padding(padding: const EdgeInsets.all(8.0)),
+              const Padding(padding: EdgeInsets.all(8.0)),
               ElevatedButton(
                 onPressed: () {},
                 child: const Text('Submit'),
@@ -74,7 +74,7 @@ class CustomAppBar extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: SingleChildScrollView(
                 child: Column(children: <Widget>[
-                  Text(
+                  const Text(
                     'Type the following words to see if autocomplete works ',
                     style: TextStyle(fontSize: 12),
                   ),
@@ -115,11 +115,11 @@ class CustomAppBar extends StatelessWidget {
                       },
                     ),
                   ),
-                  Padding(padding: const EdgeInsets.all(8.0)),
+                  const Padding(padding: EdgeInsets.all(8.0)),
                   CupertinoButton(
-                      child: Text('Submit'),
                       color: Colors.blue,
-                      onPressed: () {}),
+                      onPressed: () {},
+                      child: Text('Submit')),
                 ]),
               ),
             ),
@@ -127,6 +127,6 @@ class CustomAppBar extends StatelessWidget {
         ),
       );
     }
-    return Text('Platform not supported');
+    return const Text('Platform not supported');
   }
 }
